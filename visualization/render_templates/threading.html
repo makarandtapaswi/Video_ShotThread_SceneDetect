@@ -1,0 +1,38 @@
+<!--
+    Create a matlab structure which contains this information and save as .mat
+    % videoname
+    % series_season: bbt_s01 OR buffy_s05 etc.
+    % threads (structure array)
+    %   threads(i).shots (structure array)
+    %       threads(i).shots(j).number (shot number, integer)
+    %       threads(i).shots(j).start_imfile (path to first frame of the shot, string)
+    %       threads(i).shots(j).finis_imfile (path to last frame of the shot, string)
+-->
+
+<html>
+<head>
+<title>Shot Threading Visualization</title>
+</head>
+
+<body>
+Showing threads from {{ videoname }}</br>
+
+{% for thread in threads %}
+<table><tr><td>
+    <table><tr>
+        {% for shot in thread.shots %}
+            {% if shot.number != 0 %}
+            <td>
+                <img width=200 src='{{ shot.start_imfile }}' /></br>
+                <img width=200 src='{{ shot.finis_imfile }}' /></br>
+                <center>{{ shot.number }}
+            </td>
+            {% endif %}
+        {% endfor %}
+    </tr></table>
+</td></tr></table>
+{% endfor %}
+
+</body>
+
+</html>
