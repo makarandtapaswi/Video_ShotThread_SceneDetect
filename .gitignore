@@ -1,0 +1,16 @@
+*~
+*.swp
+*.mat
+*.mex*
+*.dll
+
+*.pyc
+cache*
+*.cache
+*tmp*
+*.pdf
+
+.directory
+
+ext/
+data/
