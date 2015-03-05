@@ -5,6 +5,7 @@ global VIDEOEVENTS
 tmp_fname = 'tmp/first_init';
 if exist(tmp_fname, 'file')
     run('ext/vlfeat/toolbox/vl_setup.m');
+    clear tmp_fname
     return;
 else
     if ~isdir('tmp'), mkdir('tmp'); end
@@ -12,7 +13,6 @@ else
     fprintf(fid, 'Created temporary file on %s\n', date);
     fclose(fid);
 end
-clear tmp_fname
 
 %% data download
 fprintf(2, 'Sample Image Data: BBT S01E01 excerpt\n');
@@ -37,3 +37,4 @@ end
 % Setup to use VLFeat
 run('ext/vlfeat/toolbox/vl_setup.m');
 
+clear tmp_fname vlsetup_fname
