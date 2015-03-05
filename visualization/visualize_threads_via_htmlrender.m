@@ -58,11 +58,13 @@ command = [VIDEOEVENTS.binaries.render_to_html ' ', ...
                 VIDEOEVENTS.binaries.render_template_folder, 'threading.html ', ...
                 VideoStruct.cache.visualization.threading.matfile ' ', ...
                 VideoStruct.cache.visualization.threading.htmlfile];
-print_dashes;
+print_dashes; print_dashes;
 fprintf('To create HTML output, run this command on the terminal...\n');
-print_dashes; fprintf('%s\n', command); print_dashes;
+fprintf('%s\n', command);
+
+print_dashes; print_dashes;
 fprintf('To open the HTML, run this command on the terminal...\n');
-print_dashes; fprintf('firefox %s\n', VideoStruct.cache.visualization.threading.htmlfile); print_dashes;
+fprintf('firefox %s\n', VideoStruct.cache.visualization.threading.htmlfile);
                                              
 end
 

@@ -1,0 +1,45 @@
+<!--
+    Create a matlab structure which contains this information and save as .mat
+    % - videoname (string)
+    % - numscenes (length(scenes), integer)
+    % - scenes (structure array)
+    %   - scenes(i).shots (structure array)
+    %     - scenes(i).shots(j).number (shot number, integer)
+    %     - scenes(i).shots(j).imfile (path to mid frame of the shot, string)
+-->
+
+<html>
+<head>
+<title>Scene Boundary Visualization</title>
+</head>
+
+<body>
+Showing {{ numscenes }} scenes from {{ videoname }}</br>
+
+<!-- <hr>Scene 1<hr> -->
+
+{% for scene in scenes %}
+{% set outerloop = loop %}
+<hr>Scene {{ outerloop.index }}<hr>
+<table><tr><td>
+    <table><tr>
+        {% set count = 0 %}
+        {% for shot in scene.shots %}
+            {% if shot.number != 0 %}
+                <td>
+                    <img width=200 src='{{ shot.imfile }}' /></br>
+                    <center>{{ shot.number }}
+                </td>
+                {% set count = count + 1 %}
+                {% if count % 5 == 0 %}
+                    </tr><tr>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </tr></table>
+</td></tr></table>
+{% endfor %}
+
+</body>
+
+</html>
