@@ -1,8 +1,6 @@
 % Main script to show how shot threading can be performed
 
 %% 1. On a pair of images
-% load params
-params = initParams(BBT(1,1));
 % take 2 sample images
 im1 = imread('data/bbt_s01e01_excerpt/bbt_s01e01_002130.jpg');
 im2 = imread('data/bbt_s01e01_excerpt/bbt_s01e01_002649.jpg');
@@ -25,12 +23,12 @@ end
 % Check line 27 of shot_similarity.m to enable/disable parfor
 
 answer = input('Running this will take a while.\nHowever, after one completed run, the data will be saved in your cache.\nAre you sure you want to continue? (y/N): ', 's');
-if strcmp(answer, 'y')
+if strcmpi(answer, 'y')
     % create the video structure for one episode of BBT
     VideoStruct = BBT(1, 1);
 
     % compute similarity between every shot to 24 shots looking ahead
-    similarity = shot_similarity(VideoStruct);
+    similarity = shot_similarity(VideoStruct, params);
 
     % convert shot similarity decisions into threads (transitivity)
     [Threads, shot_assigned] = similarity_to_threads(similarity);

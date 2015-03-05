@@ -1,4 +1,4 @@
-function Similarity = shot_similarity(VideoStruct)
+function Similarity = shot_similarity(VideoStruct, params)
 %SHOT_SIMILARITY - Computes similarity score between consecutive and alternating shots
 % Uses the homography between two images to check for similarity
 % Wraps are_images_similar.m (originally are_shots_sequential.m from Sebastian)
@@ -7,7 +7,6 @@ function Similarity = shot_similarity(VideoStruct)
 % Last modified: 27-06-2013
 
 frame_offset = 5;
-params = initParams(VideoStruct);
 
 lookahead = params.shot_similarity.lookahead;
 cache_fname = sprintf(VideoStruct.cache.homography_shot_similarity, lookahead, params.shot_similarity.num_matches, params.shot_similarity.allowable_movement);
