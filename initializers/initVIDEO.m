@@ -52,8 +52,8 @@ VideoStruct.cache.scenes_dtw3d = [dirs.scenes, video_name, '.dtw3d.nr-%d.nc-%d.n
 VideoStruct.cache.visualization.threading.matfile =  [dirs.vis_threading, video_name, '.mat'];
 VideoStruct.cache.visualization.threading.htmlfile = [dirs.vis_threading, video_name, '.threads.html'];
 
-VideoStruct.cache.visualization.scenes.matfile =  [dirs.vis_scenes, video_name, '.method-%s.num-%d.bin-%d.mat']; % method: dp
-VideoStruct.cache.visualization.scenes.htmlfile = [dirs.vis_scenes, video_name, '.method-%s.num-%d.bin-%d.mat.html']; % method: dp
+VideoStruct.cache.visualization.scenes.matfile =  [dirs.vis_scenes, video_name, '.num-%d.bin-%d.mat'];
+VideoStruct.cache.visualization.scenes.htmlfile = [dirs.vis_scenes, video_name, '.num-%d.bin-%d.mat.html'];
 
 
 end
