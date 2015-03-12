@@ -7,12 +7,9 @@ if exist(tmp_fname, 'file')
     run('ext/vlfeat/toolbox/vl_setup.m');
     clear tmp_fname
     return;
-else
-    if ~isdir('tmp'), mkdir('tmp'); end
-    fid = fopen(tmp_fname, 'w');
-    fprintf(fid, 'Created temporary file on %s\n', date);
-    fclose(fid);
 end
+
+if ~isdir('tmp'), mkdir('tmp'); end
 
 %% data download
 fprintf(2, 'Sample Image Data: BBT S01E01 excerpt\n');
@@ -36,5 +33,10 @@ while ~exist(vlsetup_fname, 'file')
 end
 % Setup to use VLFeat
 run('ext/vlfeat/toolbox/vl_setup.m');
+
+%% Create file to indicate first_init ran successfully
+fid = fopen(tmp_fname, 'w');
+fprintf(fid, 'Created temporary file on %s\n', date);
+fclose(fid);
 
 clear tmp_fname vlsetup_fname
