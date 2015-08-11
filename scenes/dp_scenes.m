@@ -16,8 +16,7 @@ sse = videoevents_to_shots(VideoStruct);
 
 %%% RGB histogram distances
 try
-    nbins = params.descriptor.rgbhist.bins3d^3;
-    load(sprintf(VideoStruct.cache.rgbhist, 'mean', nbins));
+    meanrgbhist = low_level_shot_similarity(VideoStruct, params);
     hashtab = java.util.Hashtable;
     % Magic distance to score computation sigmoid values for "a" and "b"
     mySigmoid_a = -13.7814;

@@ -45,6 +45,7 @@ Create support for a TV episode by providing the correct interface to VideoStruc
 ----
 ### External toolboxes
 - [VLFeat](http://www.vlfeat.org/install-matlab.html): Vision Libraries in C++ with a nice interface in Matlab
+- MEX/C++ n-d Image Histogram: Thanks to [Boris Schauerte](http://schauerte.me/), BSD 2-Clause license
 
 
 ### Main functions
