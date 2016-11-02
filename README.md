@@ -23,7 +23,7 @@ The <code>first_init.m</code> script will be called on running <code>startup.m</
 ---
 ### Example usage
 Initialize the video data.
-<code>VideoStruct = BBT(1, 1); params = initParams(VideoStruct);</code>
+<code>VideoStruct = BBT(1, 1); initParams;</code>
 
 Compute similarity between every shot and N subsequent shots
 <code>ssim = shot_similarity(VideoStruct, params);</code>
