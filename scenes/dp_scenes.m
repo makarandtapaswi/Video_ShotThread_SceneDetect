@@ -47,6 +47,7 @@ nlayers = 100;
 fall_down_curve = 1 - 0.5*((1:nlayers).^2 / nlayers.^2);
 
 nr = opts.nscenes + 1; nc = nshots + 1;
+nbins = params.descriptor.rgbhist.bins3d ^ 3;
 cache_fname = sprintf(VideoStruct.cache.scenes_dtw3d, nr, nc, nlayers, nbins);
 try
     fprintf('Loading cost matrix from cache... ');
