@@ -29,7 +29,7 @@ Compute similarity between every shot and N subsequent shots
 <code>ssim = shot_similarity(VideoStruct, params);</code>
 
 Convert similarity to threads (by finding maximal cliques)
-<code>[VideoStruct, shot_assigned] = similarity_to_threading(ssim);</code>
+<code>[Threads, shot_assigned] = similarity_to_threads(ssim);</code>
 
 Visualize threading using python template engine
 <code>visualize_threads_via_htmlrender(VideoStruct, Threads, shot_assigned);</code>
